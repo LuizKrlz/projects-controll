@@ -1,0 +1,204 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2020-08-19T12:10:44.445Z",
+  "__export_source": "insomnia.desktop.app:v2020.3.3",
+  "resources": [
+    {
+      "_id": "req_0dbe1eda5bda4662961274f15f315bbb",
+      "authentication": {},
+      "body": {},
+      "created": 1597789302172,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1597789302172,
+      "method": "GET",
+      "modified": 1597791932055,
+      "name": "List",
+      "parameters": [
+        {
+          "description": "",
+          "id": "pair_d425b13aeb614762bb008d3250ccaa41",
+          "name": "title",
+          "value": "Alfredo"
+        }
+      ],
+      "parentId": "fld_2b6ebe4d9e8e4c339019eca2977d7087",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url }}/projects",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_2b6ebe4d9e8e4c339019eca2977d7087",
+      "created": 1597789297525,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1597789297525,
+      "modified": 1597789297525,
+      "name": "Projects",
+      "parentId": "fld_04cbe5ee874d44f69284a03b8836d190",
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_04cbe5ee874d44f69284a03b8836d190",
+      "created": 1597789290009,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1597789290009,
+      "modified": 1597789290009,
+      "name": "Conceitos dev",
+      "parentId": "wrk_9996b09c4c67485ea51c690cd111bcee",
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_9996b09c4c67485ea51c690cd111bcee",
+      "created": 1597789277457,
+      "description": "",
+      "modified": 1597789277457,
+      "name": "Bootcamp",
+      "parentId": null,
+      "scope": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_cb79f117e41f44b5bbdab6b06c18961b",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"Roberto\",\n\t\"owner\": \"Luiz\"\n}"
+      },
+      "created": 1597790256022,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_f6fd7b8d0deb4922be6ea918655bb872",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1597784704451,
+      "method": "POST",
+      "modified": 1597791396663,
+      "name": "Create",
+      "parameters": [],
+      "parentId": "fld_2b6ebe4d9e8e4c339019eca2977d7087",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "localhost:3333/projects",
+      "_type": "request"
+    },
+    {
+      "_id": "req_dcefa2a9afac496a9e32cee8f3602cb6",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"title\": \"Projeto alterado\",\n\t\"tasks\": [\n\t\t{\n\t\t\t\"name\": \"haha\"\n\t\t}\n\t]\n}"
+      },
+      "created": 1597790309493,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_f6fd7b8d0deb4922be6ea918655bb872",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1597782405590.5,
+      "method": "PUT",
+      "modified": 1597790559480,
+      "name": "Update",
+      "parameters": [],
+      "parentId": "fld_2b6ebe4d9e8e4c339019eca2977d7087",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "localhost:3333/projects/1",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e2100ee5534d48f7a49f7e79985ef8b3",
+      "authentication": {},
+      "body": {},
+      "created": 1597790569410,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1597781256160.25,
+      "method": "DELETE",
+      "modified": 1597791262341,
+      "name": "Delete",
+      "parameters": [],
+      "parentId": "fld_2b6ebe4d9e8e4c339019eca2977d7087",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "localhost:3333/projects/ca5f553b-712f-4440-a853-6aa3ae2a2413",
+      "_type": "request"
+    },
+    {
+      "_id": "env_f98dd5b161cf614ea86c2f0757eaa47825e8b489",
+      "color": null,
+      "created": 1597789277880,
+      "data": {},
+      "dataPropertyOrder": null,
+      "isPrivate": false,
+      "metaSortKey": 1597789277880,
+      "modified": 1597789277880,
+      "name": "Base Environment",
+      "parentId": "wrk_9996b09c4c67485ea51c690cd111bcee",
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_f98dd5b161cf614ea86c2f0757eaa47825e8b489",
+      "cookies": [],
+      "created": 1597789277889,
+      "modified": 1597789277889,
+      "name": "Default Jar",
+      "parentId": "wrk_9996b09c4c67485ea51c690cd111bcee",
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_a5b9aedfb562430aab4268f0661ac159",
+      "contentType": "yaml",
+      "contents": "",
+      "created": 1597789277477,
+      "fileName": "Bootcamp",
+      "modified": 1597789277477,
+      "parentId": "wrk_9996b09c4c67485ea51c690cd111bcee",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_81e8c8f18dca4de190e081ebb1cc6482",
+      "color": "#0ccb1a",
+      "created": 1597791895075,
+      "data": { "base_url": "http://localhost:3333" },
+      "dataPropertyOrder": { "&": ["base_url"] },
+      "isPrivate": false,
+      "metaSortKey": 1597791895075,
+      "modified": 1597791919595,
+      "name": "Development",
+      "parentId": "env_f98dd5b161cf614ea86c2f0757eaa47825e8b489",
+      "_type": "environment"
+    }
+  ]
+}

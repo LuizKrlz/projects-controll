@@ -1,4 +1,4 @@
-const { isUuid, uuid } = require("uuidv4");
+const { uuid } = require("uuidv4");
 
 const projects = [];
 

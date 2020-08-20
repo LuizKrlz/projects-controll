@@ -1,10 +1,10 @@
 const { isUuid } = require("uuidv4");
 
-module.exports = (req, res, next) => {
-  const { id } = req.params;
+module.exports = (request, response, next) => {
+  const { id } = request.params;
 
-  if (!isUuid(id)) {
-    return res.status(400).json({ error: "Invalid project ID." });
+  if (id && !isUuid(id)) {
+    return response.status(400).json({ error: "Invalid project ID." });
   }
 
   return next();

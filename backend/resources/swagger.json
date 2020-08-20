@@ -1,0 +1,162 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This project is a manangement of projects to controll tasks and hours",
+    "version": "1.0.0",
+    "title": "Controll Projects",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": { "email": "luiz.correa.dev@gmail.com" }
+  },
+  "host": "http://localhost:3333",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Projects",
+      "description": "Everything about controll of projects"
+    }
+  ],
+  "schemes": ["http", "https"],
+  "paths": {
+    "/projects": {
+      "get": {
+        "tags": ["Projects"],
+        "summary": "Get all projects",
+        "description": "This route provider all projects created and filter projects exits",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "description": "title of project",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "items": { "$ref": "#/definitions/Project", "type": "array" }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Projects"],
+        "summary": "Get all projects",
+        "description": "This route provider all projects created and filter projects exits",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "title",
+            "description": "title of project",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "owner",
+            "description": "owner of project",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Field required"
+          },
+          "200": {
+            "description": "Success of operation",
+            "schema": { "$ref": "#/definitions/Project" }
+          }
+        }
+      }
+    },
+    "/projects/:id": {
+      "put": {
+        "tags": ["Projects"],
+        "summary": "Update an project",
+        "description": "This route you can be update a project",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Identifier of project",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "title",
+            "description": "Titke of project",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "owner",
+            "description": "owner of project",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Field required"
+          },
+          "404": {
+            "description": "Project not found"
+          },
+          "202": {
+            "description": "Success of operation",
+            "schema": { "$ref": "#/definitions/Project" }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Projects"],
+        "summary": "Remove an project",
+        "description": "This route you can be remove a project",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Identifier of project",
+            "required": true
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Project not found"
+          },
+          "204": {
+            "description": "Success of operation"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "bearerAuth": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "bearerFormat": "JWT"
+    }
+  },
+  "definitions": {
+    "Project": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "title": { "type": "string", "required": true },
+        "owner": { "type": "string", "required": true }
+      },
+      "xml": { "name": "User" }
+    }
+  }
+}
